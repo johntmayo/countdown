@@ -24,18 +24,40 @@
         .countdown-container {
             position: relative;
             text-align: center;
-            width: 100%;
-            max-width: 500px; /* Reduced size to 40% smaller */
+            width: 80%;
+            max-width: 360px; /* Reduced size to 40% smaller */
             margin-bottom: 20px; /* Space for the smaller image */
         }
 
-        /* Smaller image of the background underneath the timer */
+        /* Polaroid-style smaller image */
+        .image-container {
+            display: flex;
+            justify-content: center;
+        }
+
         .image-container img {
             width: 80%;
             max-width: 360px;
             display: block;
             margin: 0 auto;
             border-radius: 10px;
+            transform: rotate(-5deg); /* Slight cant angle */
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5); /* Drop shadow */
+            border: 10px solid white; /* White Polaroid-style border */
+            position: relative;
+        }
+
+        /* Add some extra white space at the bottom like a Polaroid */
+        .image-container::after {
+            content: '';
+            display: block;
+            width: 90%;
+            max-width: 360px;
+            height: 20px; /* Add some space to simulate the bottom of a polaroid */
+            background-color: white;
+            margin: -10px auto 0;
+            position: relative;
+            z-index: -1;
         }
     </style>
 </head>
